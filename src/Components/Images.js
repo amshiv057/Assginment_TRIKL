@@ -19,6 +19,7 @@ export default function Images() {
       {ImageData.length > 0 && (
         <div>
           <ImageDis
+            style={{ width: "90%", height: "90%" }}
             key={ImageData[randomNumber].id}
             {...ImageData[randomNumber]}
           />

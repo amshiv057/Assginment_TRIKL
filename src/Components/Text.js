@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Draggable from "react-draggable";
-import ResizableDiv from "./ResizableDiv";
 export default function Text() {
   const [text, settext] = useState({
-    text1: "hello",
+    text1: "",
   });
 
   function changeText(event) {
@@ -11,19 +10,22 @@ export default function Text() {
     settext(newtext);
   }
   const bounds = {
-    left: -140,
-    top: -347,
-    right: 470,
-    bottom: -15,
+    left: 0,
+    top: 10,
+    right: 600,
+    bottom: 290,
   };
   return (
-    <Draggable bounds={bounds}>
-      <input
-        type="text"
-        onChange={changeText}
-        className="text"
-        value={text.text1}
-      ></input>
-    </Draggable>
+    <>
+      <Draggable bounds={bounds}>
+        <input
+          type="text"
+          placeholder="Write something"
+          onChange={changeText}
+          className="text"
+          value={text.text1}
+        ></input>
+      </Draggable>
+    </>
   );
 }
